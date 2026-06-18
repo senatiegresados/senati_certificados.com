@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENATI - Portal del Egresado</title>
+  <meta name="description" content="Accede a tus servicios académicos en línea: calificaciones, pagos, certificados, prácticas pre-profesionales y más. Portal oficial de egresados SENATI." />
+  <link rel="canonical" href="https://login-senati-egresado.netlify.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="SENATI - Portal del Egresado" />
+  <meta property="og:description" content="Consulta calificaciones, realiza pagos y descarga certificados en línea." />
+  <meta property="og:url" content="https://login-senati-egresado.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #222; }
+
+    .nav {
+      background: #fff;
+      border-bottom: 2px solid #0033A0;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav img { height: 44px; }
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .nav-links a { color: #0033A0; font-size: 13px; text-decoration: none; font-weight: 600; }
+    .nav-links a:hover { color: #1A56DB; }
+    .nav-btn { background: #0033A0; color: #fff !important; padding: 7px 18px; border-radius: 6px; }
+    .nav-btn:hover { background: #1A56DB !important; }
+
+    .hero {
+      background: #fff;
+      padding: 52px 24px 48px;
+      border-bottom: 1px solid #E6F1FB;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .hero img { height: 220px; width: auto; margin-bottom: 24px; }
+    .badge {
+      display: inline-block;
+      background: #E6F1FB;
+      color: #0C447C;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .hero h1 { font-size: 26px; font-weight: 700; color: #042C53; margin-bottom: 12px; max-width: 560px; }
+    .hero p { font-size: 14px; color: #378ADD; max-width: 480px; margin-bottom: 28px; line-height: 1.7; }
+    .btn-cta {
+      display: inline-block;
+      background: #0033A0;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 13px 36px;
+      border-radius: 7px;
+      text-decoration: none;
+    }
+    .btn-cta:hover { background: #1A56DB; }
+
+    .strip {
+      background: #E6F1FB;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+    .strip-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #0C447C; font-weight: 500; }
+
+    .services { padding: 40px 24px; background: #fff; text-align: center; }
+    .services h2 { font-size: 19px; font-weight: 700; color: #042C53; margin-bottom: 6px; }
+    .services-sub { font-size: 13px; color: #378ADD; margin-bottom: 24px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      border: 1.5px solid #B5D4F4;
+      border-radius: 12px;
+      padding: 22px 12px;
+      text-align: center;
+    }
+    .card:hover { border-color: #0033A0; }
+    .card .icon { font-size: 28px; margin-bottom: 10px; }
+    .card-title { font-size: 13px; font-weight: 700; color: #042C53; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #185FA5; line-height: 1.4; }
+
+    .info-bar { background: #0033A0; color: #fff; text-align: center; padding: 22px 24px; }
+    .info-bar p { font-size: 13px; color: rgba(255,255,255,0.75); margin-bottom: 4px; }
+    .info-bar strong { font-size: 15px; color: #fff; }
+
+    .foot {
+      padding: 12px 24px;
+      background: #E6F1FB;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .foot p { font-size: 11px; color: #0C447C; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <img src="data:image/jpeg;base64,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" alt="SENATI" />
+    <div class="nav-links">
+      <a href="#">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://login-senati-egresado.netlify.app/" class="nav-btn">Ingresar &rarr;</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <img src="data:image/jpeg;base64,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" alt="SENATI logo" />
+    <span class="badge">Portal del Egresado</span>
+    <h1>Accede a tus servicios académicos en línea</h1>
+    <p>Consulta calificaciones, realiza pagos y descarga certificados desde cualquier lugar.</p>
+    <a href="https://login-senati-egresado.netlify.app/" class="btn-cta">Iniciar sesión &rarr;</a>
+  </section>
+
+  <div class="strip">
+    <div class="strip-item">&#10003; Acceso seguro</div>
+    <div class="strip-item">&#10003; Disponible 24/7</div>
+    <div class="strip-item">&#10003; Desde cualquier dispositivo</div>
+  </div>
+
+  <section class="services" id="servicios">
+    <h2>Servicios disponibles para egresados</h2>
+    <p class="services-sub">Todo lo que necesitas en un solo lugar</p>
+    <div class="grid">
+      <div class="card"><div class="icon">📋</div><div class="card-title">Calificaciones</div><div class="card-desc">Revisa tu historial académico</div></div>
+      <div class="card"><div class="icon">💳</div><div class="card-title">Pagos y tarifas</div><div class="card-desc">Gestiona pagos y cronogramas</div></div>
+      <div class="card"><div class="icon">🎓</div><div class="card-title">Certificados</div><div class="card-desc">Descarga tus certificados</div></div>
+      <div class="card"><div class="icon">💼</div><div class="card-title">Prácticas</div><div class="card-desc">Prácticas pre-profesionales</div></div>
+      <div class="card"><div class="icon">📷</div><div class="card-title">Foto para título</div><div class="card-desc">Sube tu foto de titulación</div></div>
+      <div class="card"><div class="icon">📁</div><div class="card-title">Documentos SINFO</div><div class="card-desc">Carga documentos al sistema</div></div>
+    </div>
+  </section>
+
+  <div class="info-bar" id="contacto">
+    <p>¿Problemas para ingresar? Escríbenos a</p>
+    <strong>soporte@senati.edu.pe</strong>
+  </div>
+
+  <div class="foot">
+    <p>© 2025 SENATI — Todos los derechos reservados</p>
+    <p>Portal del Egresado</p>
+  </div>
+
+</body>
+</html>
